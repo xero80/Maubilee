@@ -1,0 +1,28 @@
+.spacer{
+    flex: 1 1 auto;
+}
+
+a:hover {
+    color:#fd6512;
+  }
+
+.imageshape{
+    width:15%;
+    height:65%;
+}
+
+.littlespace{
+    width:10%;
+}
+
+.topcolour{
+   background-color: #055163;
+}
+
+.toptool{
+    color: white;
+ }
+
+.secondcolour{
+    background-color: white;
+}
