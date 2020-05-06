@@ -1,0 +1,14 @@
+.imageshape{
+    width:10%;
+    height:15%;
+}
+
+h1{
+    color: #fd6512;
+    text-align: center;
+}
+
+.butsubmit{
+    background-color: #fd6512; 
+    color: #055163;
+}

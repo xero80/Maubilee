@@ -1,1 +1,23 @@
-<p>login works!</p>
+<br>
+<div fxLayoutAlign="center center">
+    <img src="/assets/images/maubilee-logo.png" alt="Maubilee" class="imageshape">
+</div>
+<br>
+<div fxLayoutAlign="center center">
+    <mat-card fxFlex="25">
+        <h1>LOGIN</h1>
+        <form fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Username">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password">
+              </mat-form-field>
+              <button mat-raised-button type="submit" class="butsubmit">Login</button>
+              <a routerLink="/forgetpw">Forget Password?</a>
+          </form>
+    </mat-card>
+</div>
