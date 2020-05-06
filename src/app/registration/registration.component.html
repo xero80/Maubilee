@@ -6,50 +6,91 @@
 <div fxLayoutAlign="center center">
     <mat-card fxFlex="25">
         <h1>REGISTRATION</h1>
-        <form fxLayoutAlign="stretch" fxLayout="column">
+        <form fxLayoutAlign="stretch" fxLayout="column" #registerForm="ngForm" [appMatchPassword]="['password', 'confirmPassword']"
+        (ngSubmit)="registerForm.form.valid && onSubmit()" novalidate>
             <mat-form-field>
             <mat-label>First Name</mat-label>
-              <input matInput placeholder="First Name">
+              <input matInput placeholder="First Name" type="text" [(ngModel)]="registModal.name" name="name"
+                #name="ngModel" required>
             </mat-form-field>
+            <span class="text-danger"
+            *ngIf="(name.touched || registerForm.submitted) && name.errors?.required">
+            Name is required
+        </span>
 
             <mat-form-field>
             <mat-label>Last Name</mat-label>
-              <input matInput placeholder="Last Name">
+              <input matInput placeholder="Last Name" type="text">
             </mat-form-field>
 
             <mat-form-field>
             <mat-label>Address</mat-label>
-              <input matInput placeholder="Address">
+              <input matInput placeholder="Address" type="text">
             </mat-form-field>
 
             <mat-form-field>
             <mat-label>Phone Number</mat-label>
-              <input matInput placeholder="Phone Number">
+              <input matInput placeholder="Phone Number" type="number" name="pnum" ngModel required>
             </mat-form-field>
 
             <mat-form-field>
             <mat-label>Email Address</mat-label>
-              <input matInput placeholder="Email Address">
+              <input matInput placeholder="Email Address" [(ngModel)]="registModal.email" name="email"
+              #email="ngModel" required email>
             </mat-form-field>
+            <span class="text-danger"
+              *ngIf="(email.touched || registerForm.submitted) && email.errors?.required">
+                Email is required
+             </span>
+            <span class="text-danger" *ngIf="email.touched && email.errors?.email">
+              Enter a valid email address
+             </span>
 
             <mat-form-field>
             <mat-label>Username</mat-label>
-              <input matInput placeholder="Username">
+              <input matInput placeholder="Username" [(ngModel)]="registModal.username" name="username"
+              #username="ngModel" appValidateUserName required>
             </mat-form-field>
+            <span class="text-danger"
+            *ngIf="(username.touched || registerForm.submitted) && username.errors?.required">
+            Username is required
+        </span>
+        <span class="text-danger" *ngIf="username.touched && username.errors?.userNameNotAvailable">
+            Username not available
+        </span>
+
           
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input matInput type="password" placeholder="Password">
+                <input matInput type="password" placeholder="Password" [(ngModel)]="registModal.password" name="password"
+                #password="ngModel" appPasswordPattern required>
             </mat-form-field>
+            <span class="text-danger"
+               *ngIf="(password.touched || registerForm.submitted) && password.errors?.required">
+                Password is required
+            </span>
+            <span class="text-danger" *ngIf="password.touched && password.errors?.invalidPassword">
+               Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase letter and 1 number
+            </span>
 
             <mat-form-field>
                 <mat-label>Re-Password</mat-label>
-                <input matInput type="password" placeholder="Repeat Password">
+                <input matInput type="password" placeholder="Repeat Password" [(ngModel)]="registModal.confirmPassword"
+                name="confirmPassword" #confirmPassword="ngModel" required>
             </mat-form-field>
+            <span class="text-danger"
+            *ngIf="(confirmPassword.touched || registerForm.submitted) && confirmPassword.errors?.required">
+            Confirm Password is required
+        </span>
+        <span class="text-danger"
+            *ngIf="confirmPassword.touched && confirmPassword.errors?.passwordMismatch">
+            Passwords does not match
+        </span>
 
             <button mat-raised-button type="submit" class="butsubmit">Register</button>
             <a routerLink="/login">Login</a>
           </form>
     </mat-card>
 </div>
+{{registerForm.value | json}}
 <br><br><br><br>
