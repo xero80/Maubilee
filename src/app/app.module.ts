@@ -21,6 +21,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PasswordPatternDirective } from './directives/password-pattern.directive';
 import { MatchPasswordDirective } from './directives/match-password.directive';
 import { ValidateUserNameDirective } from './directives/validate-user-name.directive';
+import { BusinessComponent } from './business/business.component';
+import { FormatTitlePipe } from './pipes/format-title.pipe';
+import { AdvertComponent } from './advert/advert.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ValidateUserNameDirective } from './directives/validate-user-name.direc
     FooterComponent,
     PasswordPatternDirective,
     MatchPasswordDirective,
-    ValidateUserNameDirective
+    ValidateUserNameDirective,
+    BusinessComponent,
+    FormatTitlePipe,
+    AdvertComponent 
   ],
   imports: [
     BrowserModule,

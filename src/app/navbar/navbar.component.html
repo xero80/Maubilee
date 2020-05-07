@@ -2,8 +2,8 @@
     <mat-toolbar-row class="topcolour">
         <a class="toptool"><mat-icon>call</mat-icon>5 890 52 96</a>
         <div class="spacer"></div>
-        <a class="toptool" mat-button routerLink="registration"><mat-icon>person</mat-icon>Register</a>
-        <a class="toptool" mat-button routerLink="login"><mat-icon>enhanced_encryption</mat-icon>Login</a>
+        <a class="toptool" mat-button [routerLink]="['registration']" routerLinkActive="active"><mat-icon>person</mat-icon>Register</a>
+        <a class="toptool" mat-button [routerLink]="['login']" routerLinkActive="active"><mat-icon>enhanced_encryption</mat-icon>Login</a>
     </mat-toolbar-row>
 
     <mat-toolbar-row class="secondcolour">
