@@ -24,6 +24,8 @@ import { ValidateUserNameDirective } from './directives/validate-user-name.direc
 import { BusinessComponent } from './business/business.component';
 import { FormatTitlePipe } from './pipes/format-title.pipe';
 import { AdvertComponent } from './advert/advert.component';
+import { LogoutComponent } from './logout/logout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { AdvertComponent } from './advert/advert.component';
     ValidateUserNameDirective,
     BusinessComponent,
     FormatTitlePipe,
-    AdvertComponent 
+    AdvertComponent,
+    LogoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
