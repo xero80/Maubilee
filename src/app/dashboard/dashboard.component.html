@@ -1,1 +1,15 @@
 <p>dashboard works!</p>
+<table border="1">
+    <thead></thead>
+    <tr>
+      <th>First Name Test</th>
+      <th>Last Name Test</th>
+      </tr>
+    
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            </tr>
+    </tbody>
+      </table>

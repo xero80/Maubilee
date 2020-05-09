@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClientService } from '../service/http-client.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  users:string[];
+   
+  constructor(
+    private httpClientService:HttpClientService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.httpClientService.getUser().subscribe(
+     response =>this.handleSuccessfulResponse(response),
+    );
   }
+
+handleSuccessfulResponse(response)
+{
+    this.users=response;
+}
 
 }
