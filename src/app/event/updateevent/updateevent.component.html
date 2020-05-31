@@ -1,0 +1,69 @@
+
+<h3>Update Event</h3>
+<div style="width: 400px;">
+  <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="event.name" name="name" value= "{{event.name}}" #date="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Region</label>
+      <input type="text" class="form-control" id="region" required [(ngModel)]="event.region" name="region" #region="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Date</label>
+      <input type="text" class="form-control" id="date" required [(ngModel)]="event.date" name="date" #date="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Price</label>
+      <input type="text" class="form-control" id="price" required [(ngModel)]="event.price" name="price" #price="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="event.description" name="description" #description="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Type</label>
+      <input type="text" class="form-control" id="type" required [(ngModel)]="event.type" name="type" #type="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Contact</label>
+      <input type="text" class="form-control" id="contact" required [(ngModel)]="event.contact" name="contact" #contact="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Picture</label>
+      <input type="text" class="form-control" id="picture" required [(ngModel)]="event.picture" name="picture" #picture="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-success" >Update</button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </form>
+</div>
+<br><br><br><br>
+<!--
+<h2>Employee Details</h2> 
+
+<hr/>
+<div *ngIf="event"> (click)="UpdateButton()"
+  <div>
+    <label><b>First Name: </b></label> {{event.name}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label> {{event.region}}
+  </div>
+  <div>
+    <label><b>Email Id: </b></label> {{event.date}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+-->

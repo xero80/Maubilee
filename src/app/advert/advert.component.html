@@ -1,8 +1,40 @@
-<div class="main-container">
-    <app-business
-        class="multi-step-form"
-        [formContent]="formContent"
-        (formSubmit)="onFormSubmit($event)">
-    </app-business>
-</div>
 <br><br>
+<div class="crudcontainer">
+<button mat-raised-button (click)="onCreateEvent()">
+    <mat-icon>add</mat-icon>Create new event
+</button>
+<br><br>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Event List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Region</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of events | async">
+            <td>{{event.name}}</td>
+            <td>{{event.date}}</td>
+            <td>{{event.region}}</td>
+            <td>{{event.price}}</td>
+            <td>{{event.type}}</td>
+            <td><button (click)="deleteEvent(event.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateEvent(event.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <!--  <a [routerLink]="['/updateevent', event.id]" class="btn btn-info btn-sm">Edit</a>-->
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

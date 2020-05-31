@@ -13,6 +13,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +29,9 @@ import { AdvertComponent } from './advert/advert.component';
 import { LogoutComponent } from './logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IndexComponent } from './index/index.component';
+import { CreateeventComponent } from './event/createevent/createevent.component';
+import { UpdateeventComponent } from './event/updateevent/updateevent.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormatTitlePipe,
     AdvertComponent,
     LogoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    IndexComponent,
+    CreateeventComponent,
+    UpdateeventComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +65,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[CreateeventComponent, UpdateeventComponent]
 })
 export class AppModule { }

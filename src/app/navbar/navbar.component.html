@@ -6,7 +6,8 @@
         <a *ngIf="!loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/login']" routerLinkActive="active"><mat-icon>enhanced_encryption</mat-icon>Login</a>
         <a *ngIf="loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/dashboard']" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</a>
         <a *ngIf="loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/advert']" routerLinkActive="active"><mat-icon>description</mat-icon>Ads</a>
-        <a *ngIf="loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/logout']" routerLinkActive="active"><mat-icon>person</mat-icon>Logout</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/logout']" routerLinkActive="active"><mat-icon>person</mat-icon>Profile</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="toptool" mat-button [routerLink]="['/logout']" routerLinkActive="active"><mat-icon>exit_to_app</mat-icon>Logout</a>
 
     </mat-toolbar-row>
       

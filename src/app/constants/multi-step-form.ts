@@ -1,33 +1,33 @@
 const COUNTRY_LIST = [
-    { name: 'United States of America', code: 'us' },
-    { name: 'United Kingdoms', code: 'gb' },
-    { name: 'India', code: 'in' }
+    { name: 'Rock', code: 'rc' },
+    { name: 'Jazz', code: 'jz' },
+    { name: 'Concert', code: 'co' }
   ];
   
   const DATA_STEP_1 = {
-    firstName: { type: 'text', validations: {}, errors: {}, placeholder: 'First Name' },
-    lastName: { type: 'text', validations: {}, errors: {}, placeholder: 'Last Name' },
-    dateOfBirth: {
+    name: { type: 'text', validations: {}, errors: {}, placeholder: 'Name' },
+    region: { type: 'text', validations: {}, errors: {}, placeholder: 'Region' },
+    date: {
       type: 'date',
       validations: {},
       errors: {},
-      placeholder: 'Date of Birth'
+      placeholder: 'Date'
     }
   };
   
   const DATA_STEP_2 = {
-    address: { type: 'textarea', validations: {}, errors: {}, placeholder: 'Full Address' },
-    country: {
+    description: { type: 'textarea', validations: {}, errors: {}, placeholder: 'Description' },
+    type: {
       type: 'select',
       options: COUNTRY_LIST,
       validations: {},
       errors: {},
-      placeholder: 'Country'
+      placeholder: 'type'
     }
   };
   
   const DATA_STEP_3 = {
-    phone: {
+    contact: {
       type: 'phone',
       validations: {
         pattern: /^\+(?:[0-9] ?){6,14}[0-9]$/
@@ -37,7 +37,7 @@ const COUNTRY_LIST = [
       },
       placeholder: 'Contact Number'
     },
-    otp: {
+    price: {
       type: 'number',
       validations: {
         required: true,
@@ -48,7 +48,8 @@ const COUNTRY_LIST = [
         minlength: 'Minimum length should be 4 characters'
       },
       placeholder: 'One Time Password'
-    }
+    },
+    picture: { type: 'text', validations: {}, errors: {}, placeholder: 'img' }
   };
   
   const STEP_ITEMS = [

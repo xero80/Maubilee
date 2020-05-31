@@ -27,7 +27,7 @@
   
                 <ng-container *ngSwitchCase="'select'">
                   <select [formControlName]="field" [id]="field">
-                    <option value="">Select your Country</option>
+                    <option value="">Select your type</option>
                     <option
                       *ngFor="let option of currentFormContent[i][field].options; trackBy: trackByFn"
                       [value]="option.name"
@@ -86,8 +86,8 @@
             <button
               type="button"
               [disabled]="activeStepIndex === stepItems.length - 1 || masterForm[i].invalid"
-              (click)="goToStep('next')"
-            >Next</button>
+              (click)="goToStep('next')">Next</button>
+              <button mat-raised-button mat-dialog-close>Cancel</button>
           </div>
         </div>
       </form>
